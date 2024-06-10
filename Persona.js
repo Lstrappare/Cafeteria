@@ -110,7 +110,6 @@ export class Empleado extends Persona {
 }
 
 import { Sucursal } from "./Sucursal.js"
-import { DireccionCliente } from "./DireccionCliente.js/index.js";
 
 export class Administrador extends Empleado {
   constructor(

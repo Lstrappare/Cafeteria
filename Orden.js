@@ -11,8 +11,6 @@ export class OrdenEfectivo {
   }
 }
 
-import { Cuenta } from "./Cuenta.js";
-
 export class OrdenTarjeta {
   constructor(cliente, monto, token) {
     this.cuenta = new Cuenta(cliente, monto);
