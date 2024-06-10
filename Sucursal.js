@@ -2,8 +2,12 @@
 const horaActual = new Date().getHours();
 const minutosActuales = new Date().getMinutes();
 
+// BlackMoon
+import { BlackMoon } from './BlackMoon.js'
 // Administrador
 import { Administrador } from './Persona.js'
+
+import { Inventario } from './Inventario.js';
 
 export class Sucursal {
     constructor(nombreSucursal, idSucursal, saldoSucursal, estado, calle, numeroCalle,
@@ -22,7 +26,12 @@ export class Sucursal {
       this.horaCierre = horaCierre;
       this.minutoCierre = minutoCierre;
       this.empleados = [];
-      this.administrador = new Administrador('Admin(default)', 'default@default.com', '76482hdsjkka', 'Administrador', 0, idSucursal, 0, 0, 1, 1, 0, 0);
+      this.administrador = null;
+      this.inventario = new Inventario();
+    }
+
+    asignarAdministrador(administrador){
+      this.administrador = administrador;
     }
 
     aperturaOCierreAutomatico() { 

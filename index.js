@@ -8,12 +8,25 @@ import { Empleado } from "./Persona.js";
 import { Administrador } from "./Persona.js";
 
 const sucursal1 = new Sucursal('Sucursal1', 202034, 900, 'CDMX', 'Sur', '213', '08400', 'Iztacalco', 6, 0, 20, 30);
+const miAdministrador = new Administrador(
+  "Juan Perez",
+  "juan@example.com",
+  "password123",
+  "Administrador",
+  "12345678",
+  1, // sucursalID (que podrías usar de otra forma si es necesario)
+  5000,
+  0,
+  6,
+  15,
+  9,
+  30
+);
 
-sucursal1.abonarASaldoTotal(100);
 
-console.log(BlackMoon)
 
-sucursal1.registrarDatosAdmin('Jose', 'jose@gmail.com', 20204149)
+miAdministrador.asignarSucursal(sucursal1);
+sucursal1.asignarAdministrador(miAdministrador);
 
-console.table(sucursal1)
-
+console.table(miAdministrador);
+console.table(sucursal1);
